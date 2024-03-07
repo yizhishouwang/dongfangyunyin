@@ -5,7 +5,7 @@
     <artifactId>dongfangyunyin</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>dongfangyunyin Maven Webapp</name>
+    <name>dongfangyunyin</name>
     <url>http://maven.apache.org</url>
 
     <properties>
