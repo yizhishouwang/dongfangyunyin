@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lichfeng.dongfangyunyin.dao.ILoanDao">
+    
+    <resultMap id="loanMap" type="com.lichfeng.dongfangyunyin.models.Loan">
+        <result column="id" property="id"/>
+        <result column="bank_name" property="bankName"/>
+        <result column="loan_name" property="loanName"/>
+        <result column="content" property="content"/>
+        <result column="memo" property="memo"/>
+        <result column="show_order" property="showOrder"/>
+        <result column="loan_type" property="loanType"/>
+        <result column="icon" property="iconId"/>
+        <result column="CREATIONTIME" property="createTime"/>
+        <result column="MODIFIEDTIME" property="updateTime"/>
+    </resultMap>
+
+    <select id="queryAllLoanInfo" parameterType="com.lichfeng.dongfangyunyin.models.Loan" resultMap="loanMap">
+        SELECT *
+        FROM loaninfo
+        ORDER BY show_order
+    </select>
+
+    <update id="updateLoan" parameterType="com.lichfeng.dongfangyunyin.models.Loan" >
+        update loaninfo
+        set bank_name = #{bankName}, loan_name = #{loanName},content = #{content},memo = #{memo},show_order = #{showOrder},loan_type = #{loanType},icon = #{icon}
+        where id = #{id}
+    </update>
+
+    <insert id="saveLoan" parameterType="com.lichfeng.dongfangyunyin.models.Loan" >
+        INSERT INTO loaninfo( `bank_name`, `loan_name`, `content`, `memo`, `show_order`, `loan_type`, `icon`) VALUES (#{bankName}, #{loanName}, #{content}, #{memo}, #{showOrder}, #{loanType}, #{icon});
+    </insert>
+
+    <delete id="delete"  >
+        delete from loaninfo where id = #{id};
+    </delete>
+
+</mapper>
