@@ -4,7 +4,7 @@ const detail = document.querySelector(".statement .detail")
 const updateTime = document.querySelector("#updateTime")
 
 console.log(updateTime);
-updateTime.innerHTML=`2023年3月`
+updateTime.innerHTML=`2024年3月`
 editBtn.onclick = function () {
   if (document.designMode === "off") {
     document.designMode = "on"
@@ -21,6 +21,6 @@ editBtn.onclick = function () {
 // statement.onclick = function () {
 //   detail.classList.toggle('hidden');
 // }
-
+//
 // import htmlToPdf from './utils/htmlToPdf'
 // console.log(htmlToPdf);
