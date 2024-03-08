@@ -68,10 +68,10 @@
             <version>2.6</version>
         </dependency>
 
-        <dependency>
-            <grounpId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <grounpId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
 
     </dependencies>
     <build>

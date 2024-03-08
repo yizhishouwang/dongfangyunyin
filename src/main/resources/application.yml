@@ -10,8 +10,8 @@ spring:
 
 
 
-thymeleaf:
- prefix: classpath:/static/
+#thymeleaf:
+# prefix: classpath:/static/
 
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml
