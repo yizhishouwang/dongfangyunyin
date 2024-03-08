@@ -76,7 +76,7 @@
     </dependencies>
 
     <build>
-        <finalName>dongfangyunyin</finalName>
+        <finalName>${artifactId}-${version}-${spring.profile.active}</finalName>
         <resources>
             <!--排除配置文件-->
             <resource>
