@@ -278,10 +278,12 @@
 
 
     <script>
+        var baseUrl = "http://8.130.95.226:8080"
 
         function uodateModal() {
 
             $('#myModal').modal("show");
+            $("#id").val(JSON.parse(this.value).id);
             $("#bankName").val(JSON.parse(this.value).bankName);
             $("#loanName").val(JSON.parse(this.value).loanName);
             $("#content").val(JSON.parse(this.value).content);
@@ -317,7 +319,7 @@
         }
 
 
-        var baseUrl = "http://8.130.95.226:8080" // 替换为您的基本URL
+        // 替换为您的基本URL
 
 
         // Get the table body element
@@ -325,7 +327,7 @@
 
         // Function to add a new row
         function addLoan() {
-            var id = $("#id").val();
+            $("#id").val("");
             var bankName = $("#bankName").val();
             var loanName = $("#loanName").val();
             var content = $("#content").val();
