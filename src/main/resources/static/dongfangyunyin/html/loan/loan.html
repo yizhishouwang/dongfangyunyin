@@ -327,7 +327,7 @@
 
         // Function to add a new row
         function addLoan() {
-            $("#id").val("");
+            var id = $("#id").val();
             var bankName = $("#bankName").val();
             var loanName = $("#loanName").val();
             var content = $("#content").val();
@@ -342,6 +342,7 @@
 
             // 创建要发送的数据对象
             var rowData = {
+                id:id,
                 bankName: bankName,
                 loanName: loanName,
                 content: content,
