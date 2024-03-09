@@ -31,6 +31,14 @@ public class LoanController {
                 .data(loanService.queryAllLoanInfo()).build();
     }
 
+    @GetMapping("/queryLoansByLoanType/{loanType}")
+    public Result queryLoansByLoanType(@PathVariable Integer loanType){
+        return Result.builder()
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
+                .data(loanService.queryLoansByLoanType(loanType)).build();
+    }
+
     @PostMapping("/addOrUpdateLoans")
     public Result addOrUpdateLoans(@RequestBody Loan loan){
 

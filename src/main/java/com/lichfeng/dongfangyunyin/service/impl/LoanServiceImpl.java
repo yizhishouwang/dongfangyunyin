@@ -39,4 +39,9 @@ public class LoanServiceImpl implements LoanService {
     public void delete(Integer id) {
         iLoanDao.delete(id);
     }
+
+    @Override
+    public List<Loan> queryLoansByLoanType(Integer loanType) {
+        return iLoanDao.queryLoansByLoanType(loanType);
+    }
 }

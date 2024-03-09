@@ -19,4 +19,6 @@ public interface LoanService {
     void saveLoan(Loan loan);
 
     void delete(Integer id);
+
+    List<Loan> queryLoansByLoanType(Integer loanType);
 }

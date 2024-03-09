@@ -21,6 +21,13 @@
         ORDER BY show_order
     </select>
 
+    <select id="queryLoansByLoanType" parameterType="Integer" resultMap="loanMap">
+        SELECT *
+        FROM loaninfo
+        WHERE loan_type = #{loanType}
+        ORDER BY show_order
+    </select>
+
     <update id="updateLoan" parameterType="com.lichfeng.dongfangyunyin.models.Loan" >
         update loaninfo
         set bank_name = #{bankName}, loan_name = #{loanName},content = #{content},memo = #{memo},show_order = #{showOrder},loan_type = #{loanType},icon = #{icon}

@@ -22,4 +22,6 @@ public interface ILoanDao {
     void saveLoan(Loan loan);
 
     void delete(@Param("id") Integer id);
+
+    List<Loan> queryLoansByLoanType(@Param("loanType")Integer loanType);
 }
