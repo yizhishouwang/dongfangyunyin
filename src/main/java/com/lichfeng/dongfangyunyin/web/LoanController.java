@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping(value = "/loan")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class LoanController {
 
     @Autowired
