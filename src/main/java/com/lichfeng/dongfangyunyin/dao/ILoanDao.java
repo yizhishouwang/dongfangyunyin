@@ -17,9 +17,9 @@ import java.util.List;
 public interface ILoanDao {
     List<Loan> queryAllLoanInfo();
 
-    void updateLoan(@Param("loan") Loan loan);
+    void updateLoan( Loan loan);
 
-    void saveLoan(@Param("loan")Loan loan);
+    void saveLoan(Loan loan);
 
     void delete(@Param("id") Integer id);
 }

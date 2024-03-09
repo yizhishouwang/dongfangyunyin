@@ -10,7 +10,7 @@
         <result column="memo" property="memo"/>
         <result column="show_order" property="showOrder"/>
         <result column="loan_type" property="loanType"/>
-        <result column="icon" property="iconId"/>
+        <result column="icon" property="icon"/>
         <result column="CREATIONTIME" property="createTime"/>
         <result column="MODIFIEDTIME" property="updateTime"/>
     </resultMap>

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping(value = "/loan")
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class LoanController {
 
     @Autowired
@@ -35,7 +34,7 @@ public class LoanController {
     @PostMapping("/addOrUpdateLoans")
     public Result addOrUpdateLoans(@RequestBody Loan loan){
 
-        if(StringUtils.isNotBlank(String.valueOf(loan.getId())) ){
+        if(loan.getId() != null ){
             loanService.updateLoan(loan);
         }else {
             loanService.saveLoan(loan);
