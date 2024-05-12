@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>孝昌乡音收集</title>
+    <meta name="贷款管理">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
+
+</head>
+
+<body class="flat-blue">
+<div class="app-container">
+    <div class="row content-container">
+
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div>
+
+
+                <div class="page-title">
+                    <span class="title">孝昌乡音收集</span>
+                    <div class="description"></div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <!-- 第一个元素 -->
+                                        <div class="title">
+                                            <button type="button" class="btn btn-info" role="dialog" data-toggle="modal"
+                                                    data-target="#myModal">新增一条
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- 第二个元素 -->
+
+
+                                    <div class="col-sm-1 ">
+                                        <label for="loanType1">页数:</label>
+                                        <select class="selectpicker form-control" id="loanType1">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-1 ">
+                                        <label for="loanType1">条数:</label>
+                                        <select class="selectpicker form-control" id="loanType1">
+                                            <option value="0">5</option>
+                                            <option value="1">10</option>
+                                            <option value="2">20</option>
+                                            <option value="2">30</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4 ">
+                                        <label for="loanType1">普通话:</label>
+                                        <select class="selectpicker form-control" id="loanType1">
+                                            <option value="0">5</option>
+                                            <option value="1">10</option>
+                                            <option value="2">20</option>
+                                            <option value="2">30</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <!-- 第一个元素 -->
+                                        <div class="title">
+                                            <button type="button" class="btn btn-info" role="dialog" data-toggle="modal"
+                                                    data-target="#myModal">查询
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="card-body">
+                                <table class="table" id="dynamic-table">
+                                    <tr>
+                                        <th>id</th>
+                                        <th>银行名称</th>
+                                        <th>贷款名称e</th>
+                                        <th>主内容</th>
+                                        <th>备注</th>
+                                        <th>排序</th>
+                                        <th>图标</th>
+                                        <th>贷款信息</th>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            新增贷款信息
+                        </h4>
+                    </div>
+                    <form id="form_data">
+
+                        <div class="form-group" style="display: none">
+                            <label for="id">id</label>
+                            <input type="input" class="form-control required" id="id" placeholder="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="bankName">银行名称</label>
+                            <input type="input" class="form-control required" id="bankName" placeholder="银行名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanName">贷款名称</label>
+                            <input type="input" class="form-control required" id="loanName" placeholder="贷款名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">主内容</label>
+                            <input type="text" class="form-control required" id="content" placeholder="主内容">
+                        </div>
+                        <div class="form-group">
+                            <label for="memo">备注</label>
+                            <input type="text" class="form-control required" id="memo" placeholder="备注">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="showOrder">排序</label>
+                            <input type="number" class="form-control required" id="showOrder" placeholder="排序">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="icon">图标</label>
+                            <input type="input" class="form-control required" id="icon" placeholder="图标">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanType">贷款类型</label>
+                            <select class="selectpicker form-control" id="loanType">
+                                <option value="0">小微信用贷</option>
+                                <option value="1">信用贷</option>
+                                <option value="2">抵押贷/经营贷</option>
+                            </select>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="addLoan()">
+                                保存
+                            </button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <footer class="app-footer">
+        <div class="wrapper">
+            <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2024 Copyright.
+            lichfeng
+        </div>
+    </footer>
+    <div>
+        <!-- Javascript Libs -->
+
+        <!-- Javascript Libs -->
+        <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
+
+        <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
+        <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
+        <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
+
+
+        <script>
+            var baseUrl = "http://8.130.95.226:8080"
+
+            function uodateModal() {
+
+                $('#myModal').modal("show");
+                $("#id").val(JSON.parse(this.value).id);
+                $("#bankName").val(JSON.parse(this.value).bankName);
+                $("#loanName").val(JSON.parse(this.value).loanName);
+                $("#content").val(JSON.parse(this.value).content);
+                $("#memo").val(JSON.parse(this.value).memo);
+                $("#showOrder").val(JSON.parse(this.value).showOrder);
+                $("#icon").val(JSON.parse(this.value).icon);
+
+                $("#loanType").val(JSON.parse(this.value).loanType);
+
+            }
+
+            function deleteLoan() {
+                console.log("aaaaa", JSON.parse(this.value).id)
+                // 发送POST请求
+                $.ajax({
+                    url: baseUrl + "/loan/deleteLoan/" + JSON.parse(this.value).id, // 替换为您的保存数据的URL
+                    method: "POST",
+                    data: [],
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (response) {
+                        // 请求成功的处理逻辑
+                        alert("数据删除成功");
+                        fetchData()
+
+                    },
+                    error: function (xhr, status, error) {
+                        // 请求失败的处理逻辑
+                        alert("数据删除出错:", error);
+                    }
+                });
+
+            }
+
+
+            // 替换为您的基本URL
+
+
+            // Get the table body element
+            var tableBody = document.querySelector("#dynamic-table tbody");
+
+            // Function to add a new row
+            function addLoan() {
+                var id = $("#id").val();
+                var bankName = $("#bankName").val();
+                var loanName = $("#loanName").val();
+                var content = $("#content").val();
+                var memo = $("#memo").val();
+                var showOrder = $("#showOrder").val();
+                var icon = $("#icon").val();
+                var loanType = $("#loanType").val();
+                if (bankName == "" || loanName == "" || content == "" || memo == "" || showOrder == "" || icon == "" || loanType == "") {
+                    alert("输入不能为空！");
+                    return false;
+                }
+
+                // 创建要发送的数据对象
+                var rowData = {
+                    id: id,
+                    bankName: bankName,
+                    loanName: loanName,
+                    content: content,
+                    memo: memo,
+                    showOrder: showOrder,
+                    icon: icon,
+                    loanType: loanType
+                };
+
+                // 发送POST请求
+                $.ajax({
+                    url: baseUrl + "/loan/addOrUpdateLoans", // 替换为您的保存数据的URL
+                    method: "POST",
+                    data: JSON.stringify(rowData),
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (response) {
+                        // 请求成功的处理逻辑
+                        alert("数据保存成功");
+                        fetchData();
+                        $('#myModal').modal("hide");
+
+                    },
+                    error: function (xhr, status, error) {
+                        // 请求失败的处理逻辑
+                        alert("保存数据时出错:", error);
+                    }
+                });
+
+
+            }
+
+            function fetchData() {
+
+                $.ajax({
+                    url: baseUrl + "/loan/queryAllMicroLoans",
+                    type: "GET",
+                    dataType: "json",
+                    contentType: 'application/json',
+                    success: function (data) {
+                        // Clear existing table rows
+                        tableBody.innerHTML = "<tr>\n" +
+                            "                                <th>id</th>\n" +
+                            "                                <th>银行名称</th>\n" +
+                            "                                <th>贷款名称</th>\n" +
+                            "                                <th>主内容</th>\n" +
+                            "                                <th>备注</th>\n" +
+                            "                                <th>排序</th>\n" +
+                            "                                <th>图标</th>\n" +
+                            "                                <th>贷款信息</th>\n" +
+                            "\n" +
+                            "                            </tr>";
+
+                        // Generate the table rows dynamically
+                        data.data.forEach(function (row) {
+
+                            var tableRow = document.createElement("tr");
+
+                            // Object.values(row).forEach(function (value) {
+                            //     var tableData = document.createElement("td");
+                            //     tableData.textContent = value;
+                            //     tableRow.appendChild(tableData);
+                            // });
+
+                            var id = document.createElement("td");
+                            id.textContent = row.id;
+                            tableRow.appendChild(id);
+
+                            var bankName = document.createElement("td");
+                            bankName.textContent = row.bankName;
+                            tableRow.appendChild(bankName);
+
+                            var loanName = document.createElement("td");
+                            loanName.textContent = row.loanName;
+                            tableRow.appendChild(loanName);
+
+                            var content = document.createElement("td");
+                            content.textContent = row.content;
+                            tableRow.appendChild(content);
+
+                            var memo = document.createElement("td");
+                            memo.textContent = row.memo;
+                            tableRow.appendChild(memo);
+
+                            var showOrder = document.createElement("td");
+                            showOrder.textContent = row.showOrder;
+                            tableRow.appendChild(showOrder);
+
+                            var icon = document.createElement("td");
+                            icon.textContent = row.icon;
+                            tableRow.appendChild(icon);
+
+                            var loanType = document.createElement("td");
+
+                            switch (row.loanType) {
+                                case "0":
+                                    loanType.textContent = "小微信用贷";
+                                    break;
+                                case "1":
+                                    loanType.textContent = "信用代";
+                                    break;
+                                case "2":
+                                    loanType.textContent = "抵押贷/经营贷";
+                                    break;
+                            }
+
+                            tableRow.appendChild(loanType);
+
+                            var actionsCell = document.createElement("td");
+
+                            var editButton = document.createElement("button");
+                            editButton.textContent = "修改";
+                            // editButton.data-toggle="modal" ;
+                            // editButton.data-target="#myModal";
+                            editButton.className = "btn btn-primary"
+                            editButton.value = JSON.stringify(row)
+                            editButton.onclick = uodateModal
+                            actionsCell.appendChild(editButton);
+
+                            var deleteButton = document.createElement("button");
+                            deleteButton.textContent = "删除";
+                            deleteButton.className = "btn btn-danger"
+                            deleteButton.value = JSON.stringify(row)
+                            deleteButton.onclick = deleteLoan
+                            deleteButton.addEventListener("click", function () {
+                                deleteRow(row.id);
+                            });
+
+                            actionsCell.appendChild(deleteButton);
+                            tableRow.appendChild(actionsCell);
+                            tableBody.appendChild(tableRow);
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching data:", error);
+                    }
+                });
+            }
+
+            // Call the fetchData function to populate the table
+            fetchData();
+        </script>
+</body>
+
+</html>
